@@ -1,3 +1,6 @@
 /ml/logs.log
 ./myFirstCrawl.iml
 /myFirstCrawl.iml
+/ml/tmp/
+/ml/multiple_features_50_steps_10_epochs.h5
+/ml/model/
