@@ -32,3 +32,15 @@ CREATE TABLE `crwal_investor_stock_type` (
                                              `FOR_PER` float DEFAULT NULL,
                                              PRIMARY KEY (`TYPE_CODE`,`DATEON`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+
+create table CRAWL_MARKET_DAILY_DATA (
+                                         TYPE_CODE varchar(10),
+                                         DATEON varchar(10),
+                                         CLOSING_PRICE float,
+                                         UP_DOWN_PER float,
+                                         VOLUME float,
+                                         VOLUME_AMT float,
+                                         PRIMARY KEY (`TYPE_CODE`,`DATEON`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ;
