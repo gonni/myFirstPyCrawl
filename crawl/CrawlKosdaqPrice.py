@@ -36,7 +36,7 @@ def get_kosdaq_daily_price(page=1):
 
 
 def save_data(crawled: List[RealtimePriceCrawl] = [], type_code='KOSDAQ'):
-    conn = pymysql.connect(host='localhost', user='root', password='root', db='zio', charset='utf8mb4')
+    conn = pymysql.connect(host='horusa', user='root', password='root', db='zio', charset='utf8mb4')
     cur = conn.cursor()
 
     sql = f"""

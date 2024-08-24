@@ -58,7 +58,7 @@ def crawl_investor_volume2db(from_date='20240823', market_code='02', page=1):
     for row in data:
         print(row.__dict__)
 
-    conn = pymysql.connect(host='localhost', user='root', password='root', db='zio', charset='utf8mb4')
+    conn = pymysql.connect(host='horusa', user='root', password='root', db='zio', charset='utf8mb4')
     cur = conn.cursor()
 
     # sql = "INSERT INTO CRAWL_INVESTOR_DAILY_VOLUME(TYPE_CODE, DATEON, PERSONAL, FOREIGNER, COMPANY, FINANCE, INSURANCE, TOOSIN, BANK, ETC_FIN, GOV_FUND, ETC_FUND) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s); "
@@ -93,4 +93,4 @@ def crawl_investor_volume2db(from_date='20240823', market_code='02', page=1):
     conn.close()
 
 print('save crawled data ..')
-crawl_investor_volume2db()
+crawl_investor_volume2db(page=2)
