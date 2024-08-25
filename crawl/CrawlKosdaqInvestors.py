@@ -5,7 +5,7 @@ import requests
 from dataclasses import dataclass
 import utils.DataTypeConverter as dtc
 import pymysql
-
+import utils.DateTimeConverter as dtmc
 
 class InvestorVolume:
     def __init__(self, date, personal, foreigner, company, finance, insurance, toosin, bank, etc_fin, gov_fund,
@@ -49,7 +49,7 @@ def crawl_investors(url) -> List[InvestorVolume]:
     return sel_c
 
 
-def crawl_investor_volume2db(from_date='20240823', market_code='02', page=1):
+def crawl_investor_volume2db(from_date=dtmc.getYYYYMMDD(0), market_code='02', page=1):
     target_url = 'https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=%s&sosok=%s&page=%s' % (
     from_date, market_code, page)
     print(target_url)
@@ -93,4 +93,4 @@ def crawl_investor_volume2db(from_date='20240823', market_code='02', page=1):
     conn.close()
 
 print('save crawled data ..')
-crawl_investor_volume2db(page=2)
+crawl_investor_volume2db(page=1)
